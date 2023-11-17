@@ -33,10 +33,10 @@ internal class Program
 
         //---------------------------------------------------------------------------------------------
 
-        List<Studente> topTwoStudents2 = studenti.OrderByDescending(studente => studente.voto).
+        List<Studente> topTwoStudents = studenti.OrderByDescending(studente => studente.voto).
             ThenBy(studente => studente.nome).Take(2).ToList();
 
-        string risultato = string.Join(", ", topTwoStudents2.Select(studente => studente.ToString()));
+        string risultato = string.Join(", ", topTwoStudents.Select(studente => studente.ToString()));
 
         
         Console.WriteLine($"Gli studenti con il voto più alto sono: {risultato}\n");
